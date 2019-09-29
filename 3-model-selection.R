@@ -19,6 +19,17 @@
 # results of your efforts:
 
 
+#Random Walk Model
+
+#(samples, drift=0.012, sdrw=0.3, criterion=4.89) 
+# 0.786, mean(correct.data$rt) 253.6743, mean(incorrect.data$rt) 247.0654
+
+#Accumulator Model 
+
+#function(samples, rate.1=76, rate.2=82.78, criterion=3)
+#0.827, mean(correct) 252.2358, mean(incorrect) 244.7861
+ 
+
 # Using the parameters that you found above, plot histograms of the distribution of RTs
 # predicted by each model. Based on these distributions, what kind of information could
 # we use to evaluate which model is a better descriptor of the data for the experiment?
