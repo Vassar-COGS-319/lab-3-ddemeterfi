@@ -29,8 +29,31 @@
 #function(samples, rate.1=76, rate.2=82.78, criterion=3)
 #0.827, mean(correct) 252.2358, mean(incorrect) 244.7861
  
+# Both models can resonably fit the data. It does not seem that one model is substantially
+# better than the other model at fitting the data. All the numbers came out to about 
+# +- 4 of each other. 
+
+
 
 # Using the parameters that you found above, plot histograms of the distribution of RTs
 # predicted by each model. Based on these distributions, what kind of information could
 # we use to evaluate which model is a better descriptor of the data for the experiment?
 # Describe briefly how you might make this evaluation.
+
+layout(matrix(1:4, nrow = 2, byrow = T))
+hist(correct.data.rw$rt)
+hist(incorrect.data.rw$rt)
+hist(correct.data.ac$rt)
+hist(incorrect.data.ac$rt)
+
+# The composite matrix of all 4 histograms show that there are two major differences 
+# in the distribution of RTs. The random walk predicts a very skewed distribution with
+# the most values centered towards 0. The range of values is also very large, it extends 
+# up to 400. In the accumulator model, the distribution of RTs resembles a normal distribution 
+# and the range is much smaller. It only goes to 150 as a maximum. 
+# Since the distributions are so distinct we could qualitativly use the distributions 
+# to fit a set of data. 
+
+
+
+

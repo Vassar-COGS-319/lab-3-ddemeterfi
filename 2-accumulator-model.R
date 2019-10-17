@@ -80,8 +80,8 @@ mean(initial.test$rt) # should be about 112
 
 library(dplyr)
 
-correct.data <- initial.test %>% filter(correct==TRUE)
-incorrect.data <- initial.test %>% filter(correct==FALSE)
+correct.data.ac <- initial.test %>% filter(correct==TRUE)
+incorrect.data.ac <- initial.test %>% filter(correct==FALSE)
 
-hist(correct.data$rt)
-hist(incorrect.data$rt)
+hist(correct.data.ac$rt)
+hist(incorrect.data.ac$rt)

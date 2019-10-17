@@ -36,7 +36,7 @@ while(sum < 3 && sum > -3){
 
 
 
-random.walk.model <- function(samples, drift=0.015, sdrw=0.3, criterion=4.9){
+random.walk.model <- function(samples, drift=0.0, sdrw=0.3, criterion=3){
   
   accuracy.array <- c()
   rt.array <- c()
@@ -77,7 +77,7 @@ random.walk.model <- function(samples, drift=0.015, sdrw=0.3, criterion=4.9){
 # 1000 samples and about half of the samples should be correct. the average rt will probably
 # be around 112, but might vary from that by a bit.
 
-initial.test <- random.walk.model(500)
+initial.test <- random.walk.model(1000)
 sum(initial.test$correct) / length(initial.test$correct) # should be close to 0.5
 mean(initial.test$rt) # should be about 112
 
@@ -87,11 +87,11 @@ mean(initial.test$rt) # should be about 112
 
 library(dplyr)
 
-correct.data <- initial.test %>% filter(correct==TRUE)
-incorrect.data <- initial.test %>% filter(correct==FALSE)
+correct.data.rw <- initial.test %>% filter(correct==TRUE)
+incorrect.data.rw <- initial.test %>% filter(correct==FALSE)
 
-hist(correct.data$rt)
-hist(incorrect.data$rt)
+hist(correct.data.rw$rt)
+hist(incorrect.data.rw$rt)
 
-mean(correct.data$rt)
-mean(incorrect.data$rt)
+mean(correct.data.rw$rt)
+mean(incorrect.data.rw$rt)
